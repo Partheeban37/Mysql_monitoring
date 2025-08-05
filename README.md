@@ -1,8 +1,6 @@
-Absolutely! Here's a clean, professional-style `README.md` you can directly copy-paste into your project:
 
 ---
 
-```markdown
 # 📈 MySQL Monitoring with Prometheus & Grafana (Docker + Host MariaDB)
 
 This project sets up a monitoring stack for a **MariaDB/MySQL instance running on the host** using:
@@ -48,7 +46,7 @@ task1/
 - Restart MariaDB:
   ```bash
   sudo systemctl restart mariadb
-````
+
 
 * Grant remote access to `root`:
 
@@ -118,10 +116,4 @@ You should now see real-time MySQL metrics in Grafana coming from your host-base
 * **Grafana admin**: `admin / mr.looser37`
 
 ---
-
-```
-
----
-
-Let me know if you want me to generate a badge-style header, DockerHub links, or anything extra.
-```
+<img width="1920" height="1080" alt="Screenshot from 2025-08-05 16-46-21" src="https://github.com/user-attachments/assets/13f039eb-ed9c-41d5-9bb6-665d07830b53" />
