@@ -1,29 +1,16 @@
 version: '3.8'
 
 services:
-  mysql:
-    image: mysql:8.3
-    container_name: mysql
-    restart: always
-    environment:
-      MYSQL_DATABASE: task1db
-      MYSQL_USER: task1user
-      MYSQL_PASSWORD: mr.looser37
-      MYSQL_ROOT_PASSWORD: mr.looser37
-    ports:
-      - "3306:3306"
-    volumes:
-      - ./mysql-db:/var/lib/mysql
-
   mysqld-exporter:
     image: prom/mysqld-exporter:latest
     container_name: mysql-exporter
-    environment:
-      - DATA_SOURCE_NAME=root:mr.looser37@(mysql:3306)/
+    command: 
+      - --config.my-cnf=/cfg/.my.cnf
+      - --mysqld.address=host.docker.internal:3306
+    volumes:
+      - "./my.cnf:/cfg/.my.cnf:ro"
     ports:
       - "9104:9104"
-    depends_on:
-      - mysql
 
   prometheus:
     image: prom/prometheus:latest
